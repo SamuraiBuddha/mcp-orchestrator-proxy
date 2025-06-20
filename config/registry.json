@@ -1,0 +1,214 @@
+{
+  "mcps": {
+    "comfyui": {
+      "description": "AI image generation with ComfyUI",
+      "keywords": ["image", "generate", "ai", "art", "stable diffusion", "sdxl"],
+      "categories": ["image", "ai"],
+      "command": "python",
+      "args": ["-m", "mcp_comfyui"],
+      "tools": {
+        "generate_image": {
+          "description": "Generate an image from a text prompt",
+          "keywords": ["create", "make", "draw", "render"],
+          "parameters": {
+            "prompt": {
+              "type": "string",
+              "description": "Text description of the image"
+            },
+            "negative_prompt": {
+              "type": "string", 
+              "description": "What to avoid in the image"
+            },
+            "width": {
+              "type": "integer",
+              "description": "Image width (default: 1024)"
+            },
+            "height": {
+              "type": "integer",
+              "description": "Image height (default: 1024)"
+            }
+          },
+          "examples": [
+            "generate_image(prompt='a robot in a garden')",
+            "generate_image(prompt='sunset over mountains', width=1920, height=1080)"
+          ]
+        }
+      }
+    },
+    "github": {
+      "description": "GitHub repository and code management",
+      "keywords": ["git", "code", "repository", "commit", "pull request"],
+      "categories": ["code", "vcs"],
+      "command": "mcp-server-github", 
+      "args": [],
+      "tools": {
+        "create_repository": {
+          "description": "Create a new GitHub repository",
+          "keywords": ["new", "init", "start"],
+          "parameters": {
+            "name": {
+              "type": "string",
+              "description": "Repository name"
+            },
+            "description": {
+              "type": "string",
+              "description": "Repository description"
+            },
+            "private": {
+              "type": "boolean",
+              "description": "Make repository private"
+            }
+          }
+        },
+        "list_repositories": {
+          "description": "List all repositories for the authenticated user",
+          "keywords": ["show", "get", "repos"]
+        },
+        "create_issue": {
+          "description": "Create a new issue in a repository",
+          "keywords": ["bug", "feature", "task"],
+          "parameters": {
+            "repo": {
+              "type": "string",
+              "description": "Repository name"
+            },
+            "title": {
+              "type": "string",
+              "description": "Issue title"
+            },
+            "body": {
+              "type": "string",
+              "description": "Issue description"
+            }
+          }
+        }
+      }
+    },
+    "memory": {
+      "description": "Persistent memory and knowledge graph management",
+      "keywords": ["remember", "store", "recall", "knowledge", "graph"],
+      "categories": ["memory", "database"],
+      "command": "python",
+      "args": ["-m", "mcp_memory"],
+      "tools": {
+        "store_memory": {
+          "description": "Store information in the knowledge graph",
+          "keywords": ["save", "add", "create"],
+          "parameters": {
+            "content": {
+              "type": "string",
+              "description": "Information to store"
+            },
+            "tags": {
+              "type": "array",
+              "description": "Tags for categorization"
+            }
+          }
+        },
+        "search_memory": {
+          "description": "Search the knowledge graph",
+          "keywords": ["find", "query", "lookup"],
+          "parameters": {
+            "query": {
+              "type": "string",
+              "description": "Search query"
+            }
+          }
+        }
+      }
+    },
+    "docker": {
+      "description": "Docker container and image management",
+      "keywords": ["container", "deploy", "run", "kubernetes"],
+      "categories": ["devops", "infrastructure"],
+      "command": "mcp-docker",
+      "args": [],
+      "tools": {
+        "list_containers": {
+          "description": "List all Docker containers",
+          "keywords": ["show", "ps"]
+        },
+        "run_container": {
+          "description": "Run a new Docker container",
+          "keywords": ["start", "create", "launch"],
+          "parameters": {
+            "image": {
+              "type": "string",
+              "description": "Docker image name"
+            },
+            "name": {
+              "type": "string", 
+              "description": "Container name"
+            }
+          }
+        }
+      }
+    },
+    "filesystem": {
+      "description": "File system operations and management",
+      "keywords": ["file", "directory", "read", "write", "folder"],
+      "categories": ["filesystem", "storage"],
+      "command": "mcp-server-filesystem",
+      "args": [],
+      "tools": {
+        "read_file": {
+          "description": "Read contents of a file",
+          "keywords": ["open", "load", "get"],
+          "parameters": {
+            "path": {
+              "type": "string",
+              "description": "File path"
+            }
+          }
+        },
+        "write_file": {
+          "description": "Write content to a file",
+          "keywords": ["save", "create", "put"],
+          "parameters": {
+            "path": {
+              "type": "string",
+              "description": "File path"
+            },
+            "content": {
+              "type": "string",
+              "description": "File content"
+            }
+          }
+        },
+        "list_directory": {
+          "description": "List contents of a directory",
+          "keywords": ["ls", "dir", "show"],
+          "parameters": {
+            "path": {
+              "type": "string",
+              "description": "Directory path"
+            }
+          }
+        }
+      }
+    },
+    "sequential_thinking": {
+      "description": "Step-by-step problem solving and analysis",
+      "keywords": ["think", "analyze", "solve", "reason", "step"],
+      "categories": ["reasoning", "analysis"],
+      "command": "mcp-sequential-thinking",
+      "args": [],
+      "tools": {
+        "think_through": {
+          "description": "Break down a complex problem step by step",
+          "keywords": ["analyze", "decompose", "solve"],
+          "parameters": {
+            "problem": {
+              "type": "string",
+              "description": "Problem description"
+            },
+            "steps": {
+              "type": "integer",
+              "description": "Number of thinking steps"
+            }
+          }
+        }
+      }
+    }
+  }
+}
