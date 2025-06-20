@@ -209,6 +209,101 @@
           }
         }
       }
+    },
+    "freshbooks": {
+      "description": "Blockchain-powered accounting and financial management",
+      "keywords": ["invoice", "payment", "expense", "accounting", "finance", "blockchain", "audit", "tax", "billing"],
+      "categories": ["finance", "blockchain", "accounting"],
+      "command": "python",
+      "args": ["-m", "mcp_freshbooks_blockchain"],
+      "tools": {
+        "create_invoice": {
+          "description": "Create a new invoice with blockchain tracking",
+          "keywords": ["bill", "charge", "invoice"],
+          "parameters": {
+            "client": {
+              "type": "string",
+              "description": "Client name or ID"
+            },
+            "amount": {
+              "type": "number",
+              "description": "Invoice amount"
+            },
+            "description": {
+              "type": "string",
+              "description": "Invoice description"
+            },
+            "items": {
+              "type": "array",
+              "description": "Line items for the invoice"
+            }
+          }
+        },
+        "list_invoices": {
+          "description": "List invoices with blockchain verification",
+          "keywords": ["show", "get", "unpaid"],
+          "parameters": {
+            "status": {
+              "type": "string",
+              "description": "Filter by status (paid, unpaid, overdue)"
+            },
+            "client": {
+              "type": "string",
+              "description": "Filter by client"
+            }
+          }
+        },
+        "record_payment": {
+          "description": "Record a payment with blockchain confirmation",
+          "keywords": ["paid", "received", "payment"],
+          "parameters": {
+            "invoice_id": {
+              "type": "string",
+              "description": "Invoice ID"
+            },
+            "amount": {
+              "type": "number",
+              "description": "Payment amount"
+            },
+            "date": {
+              "type": "string",
+              "description": "Payment date"
+            }
+          }
+        },
+        "add_expense": {
+          "description": "Track an expense with immutable blockchain record",
+          "keywords": ["spend", "cost", "expense"],
+          "parameters": {
+            "category": {
+              "type": "string",
+              "description": "Expense category"
+            },
+            "amount": {
+              "type": "number",
+              "description": "Expense amount"
+            },
+            "description": {
+              "type": "string",
+              "description": "Expense description"
+            }
+          }
+        },
+        "generate_report": {
+          "description": "Generate financial reports with blockchain verification",
+          "keywords": ["report", "profit", "loss", "tax"],
+          "parameters": {
+            "type": {
+              "type": "string",
+              "description": "Report type (P&L, tax, audit)"
+            },
+            "period": {
+              "type": "string",
+              "description": "Reporting period"
+            }
+          }
+        }
+      }
     }
   }
 }
